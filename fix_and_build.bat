@@ -20,18 +20,18 @@ timeout /t 2 >nul
 
 echo Limpiando proyecto...
 cd /d "c:\Users\cesar\OneDrive\Documentos\ProyectosApex\MCPSeleniumServer"
-dotnet clean --verbosity quiet >nul 2>&1
+dotnet clean SeleniumMcpServer/SeleniumMcpServer.csproj --verbosity quiet >nul 2>&1
 
 echo.
 echo Publicando ejecutable optimizado...
 REM Usar dotnet publish elimina completamente los mensajes de MSBuild
-dotnet publish -c Release -o publish --self-contained false --verbosity quiet
+dotnet publish SeleniumMcpServer/SeleniumMcpServer.csproj -c Release -o publish --self-contained true --runtime win-x64 --verbosity quiet
 
 if errorlevel 1 (
     echo ERROR: Falló la publicación
     echo.
     echo Intentando con más detalle...
-    dotnet publish -c Release -o publish --self-contained false
+    dotnet publish SeleniumMcpServer/SeleniumMcpServer.csproj -c Release -o publish --self-contained true --runtime win-x64
     pause
     exit /b 1
 ) else (
