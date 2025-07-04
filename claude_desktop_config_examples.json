@@ -1,0 +1,60 @@
+{
+  "// Configuración 1: Usando ejecutable optimizado (RECOMENDADO - SIN PROBLEMAS JSON)": {
+    "mcpServers": {
+      "selenium": {
+        "command": "C:\\Users\\cesar\\OneDrive\\Documentos\\ProyectosApex\\MCPSeleniumServer\\publish\\SeleniumMcpServer.exe"
+      }
+    }
+  },
+  
+  "// Configuración 2: Usando dotnet run (PORTABLE pero puede tener problemas JSON)": {
+    "mcpServers": {
+      "selenium": {
+        "command": "dotnet",
+        "args": ["run", "--project", "SeleniumMcpServer", "--verbosity", "quiet"],
+        "cwd": "C:\\Users\\cesar\\OneDrive\\Documentos\\ProyectosApex\\MCPSeleniumServer",
+        "env": {
+          "DOTNET_CLI_UI_LANGUAGE": "en"
+        }
+      }
+    }
+  },
+  
+  "// Configuración 3: Usando rutas relativas (MÁXIMA PORTABILIDAD)": {
+    "mcpServers": {
+      "selenium": {
+        "command": "dotnet",
+        "args": ["run", "--project", "SeleniumMcpServer"],
+        "cwd": "%USERPROFILE%\\OneDrive\\Documentos\\ProyectosApex\\MCPSeleniumServer"
+      }
+    }
+  },
+  
+  "// Configuración 4: Para un equipo diferente (EJEMPLO)": {
+    "mcpServers": {
+      "selenium": {
+        "command": "dotnet",
+        "args": ["run", "--project", "SeleniumMcpServer"],
+        "cwd": "C:\\Projects\\MCPSeleniumServer"
+      }
+    }
+  },
+  
+  "// Configuración 5: Para distribución (USANDO VARIABLE DE ENTORNO)": {
+    "mcpServers": {
+      "selenium": {
+        "command": "dotnet",
+        "args": ["run", "--project", "SeleniumMcpServer"],
+        "cwd": "%MCP_SELENIUM_PATH%"
+      }
+    }
+  },
+  
+  "// NOTAS IMPORTANTES": {
+    "1": "La configuración 1 es la más portable y la que está actualmente activa",
+    "2": "Para usar la configuración 3, crear variable de entorno MCP_SELENIUM_PATH",
+    "3": "Para usar el ejecutable (config 2), primero ejecutar: dotnet publish -c Release",
+    "4": "Solo copiar la sección 'mcpServers' al archivo real claude_desktop_config.json",
+    "5": "Reiniciar Claude Desktop después de cambiar la configuración"
+  }
+}

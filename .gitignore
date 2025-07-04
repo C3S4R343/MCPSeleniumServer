@@ -1,0 +1,57 @@
+# Ignore build outputs
+bin/
+obj/
+publish/
+
+# Ignore user-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore Visual Studio temporary files
+.vscode/
+.vs/
+*.tmp
+*.temp
+
+# Ignore packages
+*.nupkg
+*.snupkg
+
+# Ignore test results
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore backup files
+*.backup
+*.bak
+*.tmp
+
+# Ignore published executables (keep source, ignore binaries)
+*.exe
+*.dll
+*.pdb
+!SeleniumMcpServer.exe
+
+# Ignore Chrome driver downloads
+chromedriver.exe
+geckodriver.exe
+
+# Ignore configuration backups
+claude_desktop_config.json.backup
