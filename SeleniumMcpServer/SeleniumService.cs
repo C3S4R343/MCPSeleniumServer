@@ -68,6 +68,15 @@ public class SeleniumService : IDisposable
     }
 
     /// <summary>
+    /// Verifica si hay una sesión de navegador activa.
+    /// </summary>
+    /// <returns>True si hay una sesión activa, False en caso contrario</returns>
+    public bool HasActiveSession()
+    {
+        return _currentSessionId != null && _drivers.ContainsKey(_currentSessionId);
+    }
+
+    /// <summary>
     /// Cierra una sesión específica de navegador o la sesión actual si no se especifica.
     /// </summary>
     /// <param name="sessionId">ID de la sesión a cerrar. Si es null, cierra la sesión actual</param>

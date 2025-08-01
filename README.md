@@ -1,6 +1,6 @@
 # MCP Selenium Server
 
-Un servidor MCP (Model Context Protocol) en C# que expone herramientas de automatización web usando Selenium WebDriver. Permite a Claude Desktop y otros clientes MCP controlar navegadores web de forma programática.
+Un servidor MCP (Model Context Protocol) en C# que expone herramientas de automatización web usando Selenium WebDriver. Permite a Claude Desktop y otros clientes MCP controlar navegadores web de forma automatica.
 
 ## 🚀 Características
 
